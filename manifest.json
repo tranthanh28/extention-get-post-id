@@ -1,0 +1,35 @@
+{
+	"name": "TienHA Facebook ID Getter",
+	"description": "Get FacebookID",
+	"version": "1.0.0",
+	"author": "https://github.com/komatsu98",
+	"icons": {
+		"16": "logo.png",
+		"48": "logo.png",
+		"128": "logo.png"
+	},
+	"action": {
+		"default_title": "TienHA Facebook ID Getter",
+		"default_icon": "logo.png"
+	},
+	"permissions": [
+		"tabs",
+		"scripting",
+		"nativeMessaging"
+	],
+	"optional_permissions": [
+
+	],
+	"host_permissions": [
+		"https://*.facebook.com/*",
+		"*://*/*"
+	],
+	"manifest_version": 3,
+	"background": {
+		"service_worker": "js/background.js"
+	},
+	"content_scripts": [{
+        "matches": ["http://*.facebook.com/*", "https://*.facebook.com/*", "https://monitaz.com/*", "https://*.monitaz.com/*"],
+        "js": ["js/jquery.min.js", "js/content.js"]
+    }]
+}
